@@ -17,6 +17,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import axiosClient from "@/utils/axiosClient";
 import { useState } from "react";
 import type { JwtPayload } from "@/types/jwtPayload";
+import { Link } from "react-router";
 
 
 const formSchema = z.object({
@@ -74,7 +75,9 @@ const Login = () => {
 
 
     return (
-        <div>
+        <div className="text-white">
+            <h1>Welcome Back !</h1>
+            <p>New user? <Link to='/signup'>Create account</Link> </p>
             <Form {...form}>
 
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
