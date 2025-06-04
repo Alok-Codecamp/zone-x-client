@@ -17,7 +17,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import axiosClient from "@/utils/axiosClient";
 import { useState } from "react";
 import type { JwtPayload } from "@/types/jwtPayload";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 
 const formSchema = z.object({
@@ -35,6 +35,7 @@ const formSchema = z.object({
 });
 
 const Login = () => {
+    const navigate = useNavigate();
     const [errorRes, setErrorRes] = useState<string>('')
     const [successRes, setSuccessRes] = useState<string>('')
     const form = useForm<z.infer<typeof formSchema>>({
@@ -64,6 +65,7 @@ const Login = () => {
                 token: res?.data?.data
             }
             localStorage.setItem('signinInfo', JSON.stringify(signInInfo))
+            navigate('/dashboard')
         } catch (error: any) {
             console.log(error.response.data);
             setErrorRes(error.response.data.message)

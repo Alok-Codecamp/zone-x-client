@@ -4,7 +4,7 @@ import axios from "axios";
 // https://zone-x-server.vercel.app/
 // http://localhost:5000
 const axiosClient = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://zone-x-server.vercel.app',
     headers: {
         'Content-Type': 'application/json'
     }
