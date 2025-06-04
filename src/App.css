@@ -1,0 +1,12 @@
+.auth-container {
+  background-image: url("./assets/login-desktop.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.auth-container-phone {
+  background-image: url("./assets/login-phone.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
